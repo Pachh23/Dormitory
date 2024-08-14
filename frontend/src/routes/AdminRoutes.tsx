@@ -5,6 +5,7 @@ import Full from "../layout/Full";
 const MainPages = Loadable(lazy(() => import("../pages/authentication/Login")));
 const Dashboard = Loadable(lazy(() => import("../pages/dashboard")));
 const Personal = Loadable(lazy(() => import("../pages/personal")));
+const ChangePersonal = Loadable(lazy(() => import("../pages/personal/change")));
 const Customer = Loadable(lazy(() => import("../pages/customer")));
 const CreateCustomer = Loadable(lazy(() => import("../pages/customer/create")));
 const EditCustomer = Loadable(lazy(() => import("../pages/customer/edit")));
@@ -19,7 +20,16 @@ const AdminRoutes = (isLoggedIn : boolean): RouteObject => {
       },
       {
         path: "/personal",
-        element: <Personal />,
+        children: [
+          {
+            path: "/personal",
+            element: <Personal />,
+          },
+          {
+            path: "/personal/change",
+            element: <ChangePersonal />,
+          }
+        ]
       },
       {
         path: "/customer",

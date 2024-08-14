@@ -9,6 +9,7 @@ import Personal from "../../pages/personal";
 import Customer from "../../pages/customer";
 import CustomerCreate from "../../pages/customer/create";
 import CustomerEdit from "../../pages/customer/edit";
+import PersonalChange from "../../pages/personal/change";
 const { Header, Content, Footer, Sider } = Layout;
 const Full: React.FC = () => {
   const page = localStorage.getItem("page");
@@ -112,6 +113,7 @@ const Full: React.FC = () => {
               <Route path="/" element={<Dashboard />} />
               <Route path="/customer" element={<Customer />} />
               <Route path="/personal" element={<Personal />} />
+              <Route path="/personal/change" element={<PersonalChange />} />
               <Route path="/customer/create" element={<CustomerCreate />} />
               <Route path="/customer/edit/:id" element={<CustomerEdit />} />
             </Routes>

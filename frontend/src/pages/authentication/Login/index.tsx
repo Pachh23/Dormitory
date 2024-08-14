@@ -1,4 +1,5 @@
 import { Button, Card, Form, Input, message, Flex, Row, Col } from "antd";
+import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import { SignIn } from "../../../services/https";
 import { SignInInterface } from "../../../interfaces/SignIn";
 import logo from "../../../assets/logo.png"; // Ensure you have the correct path for the logo image
@@ -38,20 +39,20 @@ function SignInPages() {
             <Col xs={24}>
               <Form name="basic" onFinish={onFinish} autoComplete="off" layout="vertical">
                 <Form.Item
-                  label="Email"
+                  //label="Email"
                   name="email"
                   rules={[{ required: false, message: "Please input your username!" }]}
                   style={{ marginBottom: '20px' }} // Adjust margin here
                 >
-                  <Input />
+                  <Input prefix={<UserOutlined />} placeholder="Username" />
                 </Form.Item>
                 <Form.Item
-                  label="Password"
+                  //label="Password"
                   name="password"
                   rules={[{ required: false, message: "Please input your password!" }]}
                   style={{ marginBottom: '20px' }} // Adjust margin here
                 >
-                  <Input.Password />
+                  <Input prefix={<LockOutlined />} type="password" placeholder="Password" />
                 </Form.Item>
                 <Form.Item>
                   <Button

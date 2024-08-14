@@ -7,11 +7,11 @@ function Personal() {
     <>
       <Row>
         <Col span={12}>
-          <h2>ข้อมูลส่วนตัว</h2>
+          <h2>จัดการข้อมูลส่วนตัว</h2>
         </Col>
         <Col span={12} style={{ textAlign: "end", alignSelf: "center" }}>
           <Space>
-            <Link to="/"> 
+            <Link to="/personal/change"> 
               <Button type="primary" icon={<EditOutlined />}style={{ backgroundColor: '#5273e0', borderColor: '#5273e0' }} // เปลี่ยนสีปุ่ม
               >
                 เปลี่ยนแปลงข้อมูล

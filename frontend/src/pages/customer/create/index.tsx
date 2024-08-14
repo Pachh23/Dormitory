@@ -14,13 +14,13 @@ import {
   } from "antd";
   import { PlusOutlined } from "@ant-design/icons";
   import { UsersInterface } from "../../../interfaces/IUser";
-  import { CreateUser } from "../../../services/https";
+  import { ChangeUser } from "../../../services/https";
   import { useNavigate, Link } from "react-router-dom";
   function CustomerCreate() {
     const navigate = useNavigate();
     const [messageApi, contextHolder] = message.useMessage();
     const onFinish = async (values: UsersInterface) => {
-      let res = await CreateUser(values);
+      let res = await ChangeUser(values);
      
       if (res.status == 201) {
         messageApi.open({
@@ -162,6 +162,25 @@ import {
                       { value: 1, label: "Male" },
                       { value: 2, label: "Female" },
                     ]}
+                  />
+                </Form.Item>
+              </Col>
+              <Col xs={24} sm={24} md={24} lg={24} xl={12}>
+                <Form.Item
+                  label="อายุ"
+                  name="age"
+                  rules={[
+                    {
+                      required: true,
+                      message: "กรุณากรอกอายุ !",
+                    },
+                  ]}
+                >
+                  <InputNumber
+                    min={0}
+                    max={99}
+                    defaultValue={0}
+                    style={{ width: "100%" }}
                   />
                 </Form.Item>
               </Col>

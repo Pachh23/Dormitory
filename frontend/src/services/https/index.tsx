@@ -40,7 +40,13 @@ async function DeleteUsersById(id: string) {
     .then((res) => res)
     .catch((e) => e.response);
 }
-async function CreateUser(data: UsersInterface) {
+/*async function CreateUser(data: UsersInterface) {
+  return await axios
+    .post(`${apiUrl}/signup`, data, requestOptions)
+    .then((res) => res)
+    .catch((e) => e.response);
+}*/
+async function ChangeUser(data: UsersInterface) {
   return await axios
     .post(`${apiUrl}/signup`, data, requestOptions)
     .then((res) => res)
@@ -52,5 +58,6 @@ export {
   GetUsersById,
   UpdateUsersById,
   DeleteUsersById,
-  CreateUser,
+  //CreateUser,
+  ChangeUser,
 };
